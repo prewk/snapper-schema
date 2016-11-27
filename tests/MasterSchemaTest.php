@@ -2,6 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use JsonSchema\Validator as JsonValidator;
+use Prewk\SnapperSchema\SchemaProvider;
 
 class MasterSchemaTest extends TestCase
 {
@@ -9,7 +10,7 @@ class MasterSchemaTest extends TestCase
 
     protected function setUp()
     {
-        $this->schema = (object)['$ref' => 'file://' . __DIR__ . "/../master-schema.json"];
+        $this->schema = (new SchemaProvider)->asRef();
     }
 
     public function test_that_it_compiles()

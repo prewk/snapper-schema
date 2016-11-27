@@ -3,6 +3,11 @@
     "description": "Snapper library's master schema",
     "type": "library",
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Prewk\\": "src/"
+        }
+    },
     "authors": [
         {
             "name": "Oskar Thornblad",
