@@ -1,0 +1,17 @@
+{
+    "name": "prewk/snapper-schema",
+    "description": "Snapper library's master schema",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oskar Thornblad",
+            "email": "oskar.thornblad@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "justinrainbow/json-schema": "^4.0",
+        "phpunit/phpunit": "^5.6"
+    }
+}

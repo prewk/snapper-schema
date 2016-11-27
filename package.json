@@ -1,0 +1,23 @@
+{
+  "name": "snapper-schema",
+  "version": "1.0.0",
+  "description": "Snapper library's master schema",
+  "main": "master-schema.json",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prekw/snapper-schema.git"
+  },
+  "author": "Oskar Thornblad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prekw/snapper-schema/issues"
+  },
+  "homepage": "https://github.com/prekw/snapper-schema#readme",
+  "devDependencies": {
+    "ajv": "^4.9.0",
+    "jest": "^17.0.3"
+  }
+}
