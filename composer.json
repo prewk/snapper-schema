@@ -14,6 +14,9 @@
             "email": "oskar.thornblad@gmail.com"
         }
     ],
+    "scripts": {
+        "test": "phpunit"
+    },
     "require": {},
     "require-dev": {
         "justinrainbow/json-schema": "^4.0",
