@@ -227,9 +227,10 @@
     "regExpRelationMatcher": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "expression", "relations"],
+      "required": ["type", "expression", "relations", "cast"],
       "properties": {
         "type": { "enum": ["REG_EXP_RELATION_MATCHER"] },
+        "cast": { "enum": ["NONE", "INTEGER", "STRING"] },
         "expression": { "type": "string" },
         "relations": {
           "type": "array",
