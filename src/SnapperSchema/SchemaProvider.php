@@ -24,32 +24,62 @@ class SchemaProvider
     }
 
     /**
-     * Get schema as a JSON decoded stdClass
+     * Get master schema as a JSON decoded stdClass
      *
      * @return stdClass
      */
-    public function getJSON(): stdClass
+    public function getMasterJSON(): stdClass
     {
-        return json_decode($this->getString());
+        return json_decode($this->getMasterString());
     }
 
     /**
-     * Get schema as a JSON string
+     * Get snapshot schema as a JSON decoded stdClass
+     *
+     * @return stdClass
+     */
+    public function getSnapshotJSON(): stdClass
+    {
+        return json_decode($this->getSnapshotString());
+    }
+    
+    /**
+     * Get master schema as a JSON string
      *
      * @return string
      */
-    public function getString(): string
+    public function getMasterString(): string
     {
         return file_get_contents(__DIR__ . "../../master-schema.json");
+    }
+    
+    /**
+     * Get snapshot schema as a JSON string
+     *
+     * @return string
+     */
+    public function getSnapshotString(): string
+    {
+        return file_get_contents(__DIR__ . "../../snapshot-schema.json");
     }
 
     /**
      * Get schema as a JSON Schema compatible ref object
      *
-     * @return string
+     * @return stdClass
      */
-    public function asRef(): stdClass
+    public function getMasterAsRef(): stdClass
     {
         return (object)['$ref' => 'file://' . __DIR__ . "/../../master-schema.json"];
+    }
+    
+    /**
+     * Get snapshot schema as a JSON Schema compatible ref object
+     *
+     * @return stdClass
+     */
+    public function getSnapshotAsRef(): stdClass
+    {
+        return (object)['$ref' => 'file://' . __DIR__ . "/../../snapshot-schema.json"];
     }
 }

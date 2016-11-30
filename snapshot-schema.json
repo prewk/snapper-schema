@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Snapshot schema for Snapper",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["name", "key", "fields"],
+    "properties": {
+      "name": { "type": "string" },
+      "key": { "type": ["string", "number"] },
+      "fields": { "type": "object" }
+    }
+  }
+}

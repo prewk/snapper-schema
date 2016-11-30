@@ -230,7 +230,7 @@
       "required": ["type", "expression", "relations", "cast"],
       "properties": {
         "type": { "enum": ["REG_EXP_RELATION_MATCHER"] },
-        "cast": { "enum": ["NONE", "INTEGER", "STRING"] },
+        "cast": { "enum": ["NONE", "INTEGER", "STRING", "AUTO"] },
         "expression": { "type": "string" },
         "relations": {
           "type": "array",

@@ -10,7 +10,7 @@ class MasterSchemaTest extends TestCase
 
     protected function setUp()
     {
-        $this->schema = (new SchemaProvider)->asRef();
+        $this->schema = (new SchemaProvider)->getMasterAsRef();
     }
 
     public function test_that_it_compiles()
