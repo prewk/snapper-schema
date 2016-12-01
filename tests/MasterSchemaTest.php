@@ -21,10 +21,10 @@ class MasterSchemaTest extends TestCase
 
     public function test_that_the_nodes_are_valid()
     {
-        foreach (json_decode(file_get_contents(__DIR__ . "/../nodes/manifest.json")) as list($name, $path)) {
+        foreach (json_decode(file_get_contents(__DIR__ . "/../resources/nodes/manifest.json")) as list($name, $path)) {
             $jsonValidator = new JsonValidator;
 
-            $node = json_decode(file_get_contents(__DIR__ . "/../nodes/$path"));
+            $node = json_decode(file_get_contents(__DIR__ . "/../resources/nodes/$path"));
 
             $jsonValidator->check([$node], $this->schema);
 

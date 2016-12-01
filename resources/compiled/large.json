@@ -1,0 +1,261 @@
+[
+  {
+    "alias": 8,
+    "columns": [
+      "name"
+    ],
+    "entity": "fourth_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "Dolor"
+      }
+    ]
+  },
+  {
+    "alias": 6,
+    "columns": [
+      "name"
+    ],
+    "entity": "fourth_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "Lorem"
+      }
+    ]
+  },
+  {
+    "alias": 7,
+    "columns": [
+      "name"
+    ],
+    "entity": "fourth_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "Ipsum"
+      }
+    ]
+  },
+  {
+    "alias": 1,
+    "columns": [
+      "name",
+      "fav_second_level_id"
+    ],
+    "entity": "first_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "First level"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "alias": 9,
+    "columns": [
+      "polyable_id",
+      "polyable_type",
+      "type",
+      "some_level"
+    ],
+    "entity": "polys",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "alias": 1,
+        "type": "TASK_ALIAS"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "FirstLevel"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "first"
+      },
+      {
+        "alias": 1,
+        "type": "TASK_ALIAS"
+      }
+    ]
+  },
+  {
+    "alias": 3,
+    "columns": [
+      "first_level_id",
+      "name"
+    ],
+    "entity": "second_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "alias": 1,
+        "type": "TASK_ALIAS"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "Second level two"
+      }
+    ]
+  },
+  {
+    "alias": 4,
+    "columns": [
+      "first_level_id",
+      "name"
+    ],
+    "entity": "second_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "alias": 1,
+        "type": "TASK_ALIAS"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "Second level three"
+      }
+    ]
+  },
+  {
+    "alias": 10,
+    "columns": [
+      "polyable_id",
+      "polyable_type",
+      "type",
+      "some_level"
+    ],
+    "entity": "polys",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "alias": 1,
+        "type": "TASK_ALIAS"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "FirstLevel"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "second"
+      },
+      {
+        "alias": 4,
+        "type": "TASK_ALIAS"
+      }
+    ]
+  },
+  {
+    "alias": 2,
+    "columns": [
+      "first_level_id",
+      "name"
+    ],
+    "entity": "second_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "alias": 1,
+        "type": "TASK_ALIAS"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "Second level one"
+      }
+    ]
+  },
+  {
+    "alias": 5,
+    "columns": [
+      "second_level_id",
+      "shallow_data",
+      "deep_data"
+    ],
+    "entity": "third_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "alias": 2,
+        "type": "TASK_ALIAS"
+      },
+      {
+        "parts": [
+          "{\"shallow_data\":{\"html_content\":\"<p><a href=\\\"#\\/first_level\\/",
+          1,
+          "\\\">First level<\\/a>, <a href=\\\"#\\/second_level\\/",
+          4,
+          "\\\">Second level three<\\/a><p>\"}}"
+        ],
+        "type": "TASK_ASSEMBLED_ALIAS"
+      },
+      {
+        "parts": [
+          "{\"deep_data\":{\"fourth_level\":{\"foo\":{\"bar\":{\"baz\":{\"deep_second_level_id\":",
+          3,
+          "}}},\"one\":",
+          6,
+          ",\"several\":[",
+          6,
+          ",",
+          7,
+          "]}}}"
+        ],
+        "type": "TASK_ASSEMBLED_ALIAS"
+      }
+    ]
+  },
+  {
+    "alias": 11,
+    "columns": [
+      "polyable_id",
+      "polyable_type",
+      "type",
+      "some_level"
+    ],
+    "entity": "polys",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "alias": 2,
+        "type": "TASK_ALIAS"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "SecondLevel"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "second"
+      },
+      {
+        "alias": 3,
+        "type": "TASK_ALIAS"
+      }
+    ]
+  },
+  {
+    "alias": 1,
+    "columns": [
+      "fav_second_level_id"
+    ],
+    "entity": "first_levels",
+    "type": "UPDATE_TASK",
+    "values": [
+      {
+        "alias": 2,
+        "type": "TASK_ALIAS"
+      }
+    ]
+  }
+]

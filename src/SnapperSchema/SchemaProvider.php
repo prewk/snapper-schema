@@ -11,6 +11,9 @@ namespace Prewk\SnapperSchema;
 
 use stdClass;
 
+/**
+ * Provides master and snapshot schemas in different forms
+ */
 class SchemaProvider
 {
     /**
