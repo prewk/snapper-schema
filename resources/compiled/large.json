@@ -1,19 +1,5 @@
 [
   {
-    "alias": 8,
-    "columns": [
-      "name"
-    ],
-    "entity": "fourth_levels",
-    "type": "CREATE_TASK",
-    "values": [
-      {
-        "type": "TASK_RAW_VALUE",
-        "value": "Dolor"
-      }
-    ]
-  },
-  {
     "alias": 6,
     "columns": [
       "name"
@@ -38,6 +24,20 @@
       {
         "type": "TASK_RAW_VALUE",
         "value": "Ipsum"
+      }
+    ]
+  },
+  {
+    "alias": 8,
+    "columns": [
+      "name"
+    ],
+    "entity": "fourth_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "Dolor"
       }
     ]
   },
@@ -191,25 +191,81 @@
       },
       {
         "parts": [
-          "{\"shallow_data\":{\"html_content\":\"<p><a href=\\\"#\\/first_level\\/",
-          1,
-          "\\\">First level<\\/a>, <a href=\\\"#\\/second_level\\/",
-          4,
-          "\\\">Second level three<\\/a><p>\"}}"
+          [
+            "PART",
+            "NONE",
+            "{\"shallow_data\":{\"html_content\":\"<p><a href=\\\"#\\/first_level\\/"
+          ],
+          [
+            "ALIAS",
+            "NONE",
+            1
+          ],
+          [
+            "PART",
+            "NONE",
+            "\\\">First level<\\/a>, <a href=\\\"#\\/second_level\\/"
+          ],
+          [
+            "ALIAS",
+            "NONE",
+            4
+          ],
+          [
+            "PART",
+            "NONE",
+            "\\\">Second level three<\\/a><p>\"}}"
+          ]
         ],
         "type": "TASK_ASSEMBLED_ALIAS"
       },
       {
         "parts": [
-          "{\"deep_data\":{\"fourth_level\":{\"foo\":{\"bar\":{\"baz\":{\"deep_second_level_id\":",
-          3,
-          "}}},\"one\":",
-          6,
-          ",\"several\":[",
-          6,
-          ",",
-          7,
-          "]}}}"
+          [
+            "PART",
+            "NONE",
+            "{\"deep_data\":{\"fourth_level\":{\"foo\":{\"bar\":{\"baz\":{\"deep_second_level_id\":"
+          ],
+          [
+            "ALIAS",
+            "JSON",
+            3
+          ],
+          [
+            "PART",
+            "NONE",
+            "}}},\"one\":"
+          ],
+          [
+            "ALIAS",
+            "JSON",
+            6
+          ],
+          [
+            "PART",
+            "NONE",
+            ",\"several\":["
+          ],
+          [
+            "ALIAS",
+            "JSON",
+            6
+          ],
+          [
+            "PART",
+            "NONE",
+            ","
+          ],
+          [
+            "ALIAS",
+            "JSON",
+            7
+          ],
+          [
+            "PART",
+            "NONE",
+            "]}}}"
+          ]
         ],
         "type": "TASK_ASSEMBLED_ALIAS"
       }
