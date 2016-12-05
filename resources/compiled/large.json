@@ -1,5 +1,19 @@
 [
   {
+    "alias": 8,
+    "columns": [
+      "name"
+    ],
+    "entity": "fourth_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "Dolor"
+      }
+    ]
+  },
+  {
     "alias": 6,
     "columns": [
       "name"
@@ -24,20 +38,6 @@
       {
         "type": "TASK_RAW_VALUE",
         "value": "Ipsum"
-      }
-    ]
-  },
-  {
-    "alias": 8,
-    "columns": [
-      "name"
-    ],
-    "entity": "fourth_levels",
-    "type": "CREATE_TASK",
-    "values": [
-      {
-        "type": "TASK_RAW_VALUE",
-        "value": "Dolor"
       }
     ]
   },
@@ -306,8 +306,8 @@
       "fav_second_level_id"
     ],
     "entity": "first_levels",
-    "type": "UPDATE_TASK",
     "keyName": "id",
+    "type": "UPDATE_TASK",
     "values": [
       {
         "alias": 2,
