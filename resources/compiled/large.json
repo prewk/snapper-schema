@@ -194,7 +194,7 @@
           [
             "PART",
             "NONE",
-            "{\"shallow_data\":{\"html_content\":\"<p><a href=\\\"#\\/first_level\\/"
+            "{\"shallow_data\":{\"html_content\":\"<p><a href=\\\"#/first_level/"
           ],
           [
             "ALIAS",
@@ -204,7 +204,7 @@
           [
             "PART",
             "NONE",
-            "\\\">First level<\\/a>, <a href=\\\"#\\/second_level\\/"
+            "\\\">First level</a>, <a href=\\\"#/second_level/"
           ],
           [
             "ALIAS",
@@ -214,7 +214,7 @@
           [
             "PART",
             "NONE",
-            "\\\">Second level three<\\/a><p>\"}}"
+            "\\\">Second level three</a><p>\"}}"
           ]
         ],
         "type": "TASK_ASSEMBLED_ALIAS"
