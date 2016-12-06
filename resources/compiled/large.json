@@ -47,6 +47,25 @@
     ]
   },
   {
+    "alias": 2,
+    "columns": [
+      "first_level_id",
+      "name"
+    ],
+    "entity": "second_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "alias": 1,
+        "type": "TASK_ALIAS"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "Second level one"
+      }
+    ]
+  },
+  {
     "alias": 3,
     "columns": [
       "first_level_id",
@@ -81,25 +100,6 @@
       {
         "type": "TASK_RAW_VALUE",
         "value": "Second level three"
-      }
-    ]
-  },
-  {
-    "alias": 2,
-    "columns": [
-      "first_level_id",
-      "name"
-    ],
-    "entity": "second_levels",
-    "type": "CREATE_TASK",
-    "values": [
-      {
-        "alias": 1,
-        "type": "TASK_ALIAS"
-      },
-      {
-        "type": "TASK_RAW_VALUE",
-        "value": "Second level one"
       }
     ]
   },
