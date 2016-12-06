@@ -1,19 +1,5 @@
 [
   {
-    "alias": 8,
-    "columns": [
-      "name"
-    ],
-    "entity": "fourth_levels",
-    "type": "CREATE_TASK",
-    "values": [
-      {
-        "type": "TASK_RAW_VALUE",
-        "value": "Dolor"
-      }
-    ]
-  },
-  {
     "alias": 6,
     "columns": [
       "name"
@@ -61,35 +47,6 @@
     ]
   },
   {
-    "alias": 9,
-    "columns": [
-      "polyable_id",
-      "polyable_type",
-      "type",
-      "some_level"
-    ],
-    "entity": "polys",
-    "type": "CREATE_TASK",
-    "values": [
-      {
-        "alias": 1,
-        "type": "TASK_ALIAS"
-      },
-      {
-        "type": "TASK_RAW_VALUE",
-        "value": "FirstLevel"
-      },
-      {
-        "type": "TASK_RAW_VALUE",
-        "value": "first"
-      },
-      {
-        "alias": 1,
-        "type": "TASK_ALIAS"
-      }
-    ]
-  },
-  {
     "alias": 3,
     "columns": [
       "first_level_id",
@@ -124,35 +81,6 @@
       {
         "type": "TASK_RAW_VALUE",
         "value": "Second level three"
-      }
-    ]
-  },
-  {
-    "alias": 10,
-    "columns": [
-      "polyable_id",
-      "polyable_type",
-      "type",
-      "some_level"
-    ],
-    "entity": "polys",
-    "type": "CREATE_TASK",
-    "values": [
-      {
-        "alias": 1,
-        "type": "TASK_ALIAS"
-      },
-      {
-        "type": "TASK_RAW_VALUE",
-        "value": "FirstLevel"
-      },
-      {
-        "type": "TASK_RAW_VALUE",
-        "value": "second"
-      },
-      {
-        "alias": 4,
-        "type": "TASK_ALIAS"
       }
     ]
   },
@@ -268,6 +196,78 @@
           ]
         ],
         "type": "TASK_ASSEMBLED_ALIAS"
+      }
+    ]
+  },
+  {
+    "alias": 8,
+    "columns": [
+      "name"
+    ],
+    "entity": "fourth_levels",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "Dolor"
+      }
+    ]
+  },
+  {
+    "alias": 9,
+    "columns": [
+      "polyable_id",
+      "polyable_type",
+      "type",
+      "some_level"
+    ],
+    "entity": "polys",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "alias": 1,
+        "type": "TASK_ALIAS"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "FirstLevel"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "first"
+      },
+      {
+        "alias": 1,
+        "type": "TASK_ALIAS"
+      }
+    ]
+  },
+  {
+    "alias": 10,
+    "columns": [
+      "polyable_id",
+      "polyable_type",
+      "type",
+      "some_level"
+    ],
+    "entity": "polys",
+    "type": "CREATE_TASK",
+    "values": [
+      {
+        "alias": 1,
+        "type": "TASK_ALIAS"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "FirstLevel"
+      },
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "second"
+      },
+      {
+        "alias": 4,
+        "type": "TASK_ALIAS"
       }
     ]
   },
