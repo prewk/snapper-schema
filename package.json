@@ -1,6 +1,6 @@
 {
   "name": "snapper-schema",
-  "version": "1.7.0",
+  "version": "1.7.2",
   "description": "Snapper library's master schema",
   "main": "master-schema.json",
   "scripts": {
