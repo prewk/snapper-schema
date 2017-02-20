@@ -29,6 +29,26 @@
   },
   {
     "type": "ENTITY",
+    "name": "recursives",
+    "morphAs": "Recursive",
+    "key": {
+      "type": "PRIMARY_KEY",
+      "name": "id"
+    },
+    "fields": [
+      {
+        "type": "BELONGS_TO",
+        "name": "parent",
+        "foreignEntity": "recursives",
+        "localKey": "parent_id",
+        "optional": false,
+        "fallback": 0,
+        "circularFallback": 0
+      }
+    ]
+  },
+  {
+    "type": "ENTITY",
     "name": "second_levels",
     "morphAs": "SecondLevel",
     "key": {

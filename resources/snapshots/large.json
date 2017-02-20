@@ -83,5 +83,26 @@
       "type": "second",
       "some_level": 2
     }
+  },
+  {
+    "name": "recursives",
+    "key": 1,
+    "fields": {
+      "parent_id": 0
+    }
+  },
+  {
+    "name": "recursives",
+    "key": 2,
+    "fields": {
+      "parent_id": 1
+    }
+  },
+  {
+    "name": "recursives",
+    "key": 3,
+    "fields": {
+      "parent_id": 2
+    }
   }
 ]

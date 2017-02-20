@@ -1,11 +1,11 @@
 [
   {
+    "type": "CREATE_TASK",
+    "entity": "fourth_levels",
     "alias": 6,
     "columns": [
       "name"
     ],
-    "entity": "fourth_levels",
-    "type": "CREATE_TASK",
     "values": [
       {
         "type": "TASK_RAW_VALUE",
@@ -14,12 +14,12 @@
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "fourth_levels",
     "alias": 7,
     "columns": [
       "name"
     ],
-    "entity": "fourth_levels",
-    "type": "CREATE_TASK",
     "values": [
       {
         "type": "TASK_RAW_VALUE",
@@ -28,13 +28,41 @@
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "recursives",
+    "alias": 12,
+    "columns": [
+      "parent_id"
+    ],
+    "values": [
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "type": "CREATE_TASK",
+    "entity": "recursives",
+    "alias": 13,
+    "columns": [
+      "parent_id"
+    ],
+    "values": [
+      {
+        "type": "TASK_ALIAS",
+        "alias": 12
+      }
+    ]
+  },
+  {
+    "type": "CREATE_TASK",
+    "entity": "first_levels",
     "alias": 1,
     "columns": [
       "name",
       "fav_second_level_id"
     ],
-    "entity": "first_levels",
-    "type": "CREATE_TASK",
     "values": [
       {
         "type": "TASK_RAW_VALUE",
@@ -47,17 +75,17 @@
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "second_levels",
     "alias": 2,
     "columns": [
       "first_level_id",
       "name"
     ],
-    "entity": "second_levels",
-    "type": "CREATE_TASK",
     "values": [
       {
-        "alias": 1,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 1
       },
       {
         "type": "TASK_RAW_VALUE",
@@ -66,17 +94,17 @@
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "second_levels",
     "alias": 3,
     "columns": [
       "first_level_id",
       "name"
     ],
-    "entity": "second_levels",
-    "type": "CREATE_TASK",
     "values": [
       {
-        "alias": 1,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 1
       },
       {
         "type": "TASK_RAW_VALUE",
@@ -85,17 +113,17 @@
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "second_levels",
     "alias": 4,
     "columns": [
       "first_level_id",
       "name"
     ],
-    "entity": "second_levels",
-    "type": "CREATE_TASK",
     "values": [
       {
-        "alias": 1,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 1
       },
       {
         "type": "TASK_RAW_VALUE",
@@ -104,20 +132,21 @@
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "third_levels",
     "alias": 5,
     "columns": [
       "second_level_id",
       "shallow_data",
       "deep_data"
     ],
-    "entity": "third_levels",
-    "type": "CREATE_TASK",
     "values": [
       {
-        "alias": 2,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 2
       },
       {
+        "type": "TASK_ASSEMBLED_ALIAS",
         "parts": [
           [
             "PART",
@@ -144,25 +173,15 @@
             "NONE",
             "\\\">Second level three</a><p>\"}}"
           ]
-        ],
-        "type": "TASK_ASSEMBLED_ALIAS"
+        ]
       },
       {
+        "type": "TASK_ASSEMBLED_ALIAS",
         "parts": [
           [
             "PART",
             "NONE",
-            "{\"deep_data\":{\"fourth_level\":{\"foo\":{\"bar\":{\"baz\":{\"deep_second_level_id\":"
-          ],
-          [
-            "ALIAS",
-            "JSON",
-            3
-          ],
-          [
-            "PART",
-            "NONE",
-            "}}},\"one\":"
+            "{\"deep_data\":{\"fourth_level\":{\"one\":"
           ],
           [
             "ALIAS",
@@ -172,7 +191,17 @@
           [
             "PART",
             "NONE",
-            ",\"several\":["
+            ",\"foo\":{\"bar\":{\"baz\":{\"deep_second_level_id\":"
+          ],
+          [
+            "ALIAS",
+            "JSON",
+            3
+          ],
+          [
+            "PART",
+            "NONE",
+            "}}},\"several\":["
           ],
           [
             "ALIAS",
@@ -194,18 +223,17 @@
             "NONE",
             "]}}}"
           ]
-        ],
-        "type": "TASK_ASSEMBLED_ALIAS"
+        ]
       }
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "fourth_levels",
     "alias": 8,
     "columns": [
       "name"
     ],
-    "entity": "fourth_levels",
-    "type": "CREATE_TASK",
     "values": [
       {
         "type": "TASK_RAW_VALUE",
@@ -214,6 +242,8 @@
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "polys",
     "alias": 9,
     "columns": [
       "polyable_id",
@@ -221,12 +251,10 @@
       "type",
       "some_level"
     ],
-    "entity": "polys",
-    "type": "CREATE_TASK",
     "values": [
       {
-        "alias": 1,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 1
       },
       {
         "type": "TASK_RAW_VALUE",
@@ -237,12 +265,14 @@
         "value": "first"
       },
       {
-        "alias": 1,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 1
       }
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "polys",
     "alias": 10,
     "columns": [
       "polyable_id",
@@ -250,12 +280,10 @@
       "type",
       "some_level"
     ],
-    "entity": "polys",
-    "type": "CREATE_TASK",
     "values": [
       {
-        "alias": 1,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 1
       },
       {
         "type": "TASK_RAW_VALUE",
@@ -266,12 +294,14 @@
         "value": "second"
       },
       {
-        "alias": 4,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 4
       }
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "polys",
     "alias": 11,
     "columns": [
       "polyable_id",
@@ -279,12 +309,10 @@
       "type",
       "some_level"
     ],
-    "entity": "polys",
-    "type": "CREATE_TASK",
     "values": [
       {
-        "alias": 2,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 2
       },
       {
         "type": "TASK_RAW_VALUE",
@@ -295,23 +323,37 @@
         "value": "second"
       },
       {
-        "alias": 3,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 3
       }
     ]
   },
   {
+    "type": "CREATE_TASK",
+    "entity": "recursives",
+    "alias": 14,
+    "columns": [
+      "parent_id"
+    ],
+    "values": [
+      {
+        "type": "TASK_ALIAS",
+        "alias": 13
+      }
+    ]
+  },
+  {
+    "type": "UPDATE_TASK",
+    "entity": "first_levels",
     "alias": 1,
+    "keyName": "id",
     "columns": [
       "fav_second_level_id"
     ],
-    "entity": "first_levels",
-    "keyName": "id",
-    "type": "UPDATE_TASK",
     "values": [
       {
-        "alias": 2,
-        "type": "TASK_ALIAS"
+        "type": "TASK_ALIAS",
+        "alias": 2
       }
     ]
   }
