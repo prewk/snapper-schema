@@ -29,34 +29,6 @@
   },
   {
     "type": "CREATE_TASK",
-    "entity": "recursives",
-    "alias": 12,
-    "columns": [
-      "parent_id"
-    ],
-    "values": [
-      {
-        "type": "TASK_RAW_VALUE",
-        "value": 0
-      }
-    ]
-  },
-  {
-    "type": "CREATE_TASK",
-    "entity": "recursives",
-    "alias": 13,
-    "columns": [
-      "parent_id"
-    ],
-    "values": [
-      {
-        "type": "TASK_ALIAS",
-        "alias": 12
-      }
-    ]
-  },
-  {
-    "type": "CREATE_TASK",
     "entity": "first_levels",
     "alias": 1,
     "columns": [
@@ -331,14 +303,42 @@
   {
     "type": "CREATE_TASK",
     "entity": "recursives",
+    "alias": 12,
+    "columns": [
+      "parent_id"
+    ],
+    "values": [
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "type": "CREATE_TASK",
+    "entity": "recursives",
+    "alias": 13,
+    "columns": [
+      "parent_id"
+    ],
+    "values": [
+      {
+        "type": "TASK_RAW_VALUE",
+        "value": "cmVjdXJzaXZlcy8x"
+      }
+    ]
+  },
+  {
+    "type": "CREATE_TASK",
+    "entity": "recursives",
     "alias": 14,
     "columns": [
       "parent_id"
     ],
     "values": [
       {
-        "type": "TASK_ALIAS",
-        "alias": 13
+        "type": "TASK_RAW_VALUE",
+        "value": "cmVjdXJzaXZlcy8y"
       }
     ]
   },

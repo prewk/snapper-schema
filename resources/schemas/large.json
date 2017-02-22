@@ -43,7 +43,7 @@
         "name": "parent",
         "foreignEntity": "recursives",
         "localKey": "parent_id",
-        "relationCondition": "NONE",
+        "relationCondition": "NON_ZERO_INT",
         "conditionMatcher": "",
         "optional": false,
         "fallback": 0,
@@ -155,15 +155,15 @@
           {
             "type": "VALUE_RELATION_ENTRY",
             "path": "/\\.deep_second_level_id$/",
-            "relationCondition": "REGEXP",
-            "conditionMatcher": "/^\\d+|.{10}/",
+            "relationCondition": "NONE",
+            "conditionMatcher": "",
             "relation": "second_levels"
           },
           {
             "type": "LIST_RELATION_ENTRY",
             "path": "fourth_level.several",
-            "relationCondition": "NONE",
-            "conditionMatcher": "",
+            "relationCondition": "REGEXP",
+            "conditionMatcher": "/^[1-9][0-9]*|.{10}/",
             "relation": "fourth_levels"
           },
           {
