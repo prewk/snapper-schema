@@ -69,7 +69,7 @@
         "name": { "type": "string" },
         "foreignEntity": { "type": "string" },
         "localKey": { "type": "string" },
-        "relationCondition": { "enum": ["NON_ZERO_INT", "REGEXP", "NONE"] },
+        "relationCondition": { "enum": ["NON_ZERO_INT", "REGEXP", "NONE", "TRUTHY"] },
         "conditionMatcher": { "type": "string" },
         "optional": { "type": "boolean" },
         "fallback": {},
@@ -197,7 +197,7 @@
       "properties": {
         "type": { "enum": ["VALUE_RELATION_ENTRY"] },
         "path": { "type": "string" },
-        "relationCondition": { "enum": ["NON_ZERO_INT", "REGEXP", "NONE"] },
+        "relationCondition": { "enum": ["NON_ZERO_INT", "REGEXP", "NONE", "TRUTHY"] },
         "conditionMatcher": { "type": "string" },
         "relation": { "type": "string" }
       }
@@ -209,7 +209,7 @@
       "properties": {
         "type": { "enum": ["LIST_RELATION_ENTRY"] },
         "path": { "type": "string" },
-        "relationCondition": { "enum": ["NON_ZERO_INT", "REGEXP", "NONE"] },
+        "relationCondition": { "enum": ["NON_ZERO_INT", "REGEXP", "NONE", "TRUTHY"] },
         "conditionMatcher": { "type": "string" },
         "relation": { "type": "string" }
       }
