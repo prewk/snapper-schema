@@ -22,6 +22,8 @@
         "foreignEntity": "second_levels",
         "localKey": "fav_second_level_id",
         "optional": true,
+        "relationCondition": "NONE",
+        "conditionMatcher": "",
         "fallback": 0,
         "circularFallback": 0
       }
@@ -41,6 +43,8 @@
         "name": "parent",
         "foreignEntity": "recursives",
         "localKey": "parent_id",
+        "relationCondition": "NONE",
+        "conditionMatcher": "",
         "optional": false,
         "fallback": 0,
         "circularFallback": 0
@@ -61,6 +65,8 @@
         "name": "first_level",
         "foreignEntity": "first_levels",
         "localKey": "first_level_id",
+        "relationCondition": "NONE",
+        "conditionMatcher": "",
         "optional": false,
         "fallback": 0,
         "circularFallback": 0
@@ -89,6 +95,8 @@
         "name": "second_level",
         "foreignEntity": "second_levels",
         "localKey": "second_level_id",
+        "relationCondition": "NONE",
+        "conditionMatcher": "",
         "optional": false,
         "fallback": 0,
         "circularFallback": 0
@@ -140,17 +148,30 @@
           {
             "type": "VALUE_RELATION_ENTRY",
             "path": "fourth_level.one",
+            "relationCondition": "NONE",
+            "conditionMatcher": "",
             "relation": "fourth_levels"
           },
           {
             "type": "VALUE_RELATION_ENTRY",
             "path": "/\\.deep_second_level_id$/",
+            "relationCondition": "REGEXP",
+            "conditionMatcher": "/^\\d+|.{10}/",
             "relation": "second_levels"
           },
           {
             "type": "LIST_RELATION_ENTRY",
             "path": "fourth_level.several",
+            "relationCondition": "NONE",
+            "conditionMatcher": "",
             "relation": "fourth_levels"
+          },
+          {
+            "type": "VALUE_RELATION_ENTRY",
+            "path": "maybe_second_level",
+            "relationCondition": "NON_ZERO_INT",
+            "conditionMatcher": "",
+            "relation": "second_levels"
           }
         ]
       }
@@ -214,6 +235,8 @@
             "name": "some_level",
             "foreignEntity": "first_levels",
             "localKey": "some_level",
+            "relationCondition": "NONE",
+            "conditionMatcher": "",
             "optional": false,
             "fallback": null,
             "circularFallback": null
@@ -223,6 +246,8 @@
             "name": "some_level",
             "foreignEntity": "second_levels",
             "localKey": "some_level",
+            "relationCondition": "NONE",
+            "conditionMatcher": "",
             "optional": false,
             "fallback": null,
             "circularFallback": null

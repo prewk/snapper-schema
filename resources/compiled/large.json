@@ -211,7 +211,7 @@
           [
             "PART",
             "NONE",
-            ","
+            ",0,null,"
           ],
           [
             "ALIAS",
@@ -221,7 +221,7 @@
           [
             "PART",
             "NONE",
-            "]}}}"
+            "]},\"maybe_second_level\":\"NO\"}}"
           ]
         ]
       }

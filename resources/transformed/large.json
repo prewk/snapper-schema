@@ -51,9 +51,12 @@
           },
           "several": [
             "Zm91cnRoX2xldmVscy8x",
+            0,
+            null,
             "Zm91cnRoX2xldmVscy8y"
           ]
-        }
+        },
+        "maybe_second_level": "NO"
       }
     }
   },

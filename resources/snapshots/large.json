@@ -31,8 +31,9 @@
         "fourth_level": {
           "one": 1,
           "foo": { "bar": { "baz": { "deep_second_level_id": 2 } } },
-          "several": [1, 2]
-        }
+          "several": [1, 0, null, 2]
+        },
+        "maybe_second_level": "NO"
       }
     }
   },

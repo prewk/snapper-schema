@@ -63,12 +63,14 @@
     "belongsToField": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "name", "foreignEntity", "localKey", "optional", "fallback", "circularFallback"],
+      "required": ["type", "name", "foreignEntity", "localKey", "relationCondition", "conditionMatcher", "optional", "fallback", "circularFallback"],
       "properties": {
         "type": { "enum": ["BELONGS_TO"] },
         "name": { "type": "string" },
         "foreignEntity": { "type": "string" },
         "localKey": { "type": "string" },
+        "relationCondition": { "enum": ["NON_ZERO_INT", "REGEXP", "NONE"] },
+        "conditionMatcher": { "type": "string" },
         "optional": { "type": "boolean" },
         "fallback": {},
         "circularFallback": {}
@@ -191,20 +193,24 @@
     "valueRelationEntry": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "path", "relation"],
+      "required": ["type", "path", "relation", "relationCondition", "conditionMatcher"],
       "properties": {
         "type": { "enum": ["VALUE_RELATION_ENTRY"] },
         "path": { "type": "string" },
+        "relationCondition": { "enum": ["NON_ZERO_INT", "REGEXP", "NONE"] },
+        "conditionMatcher": { "type": "string" },
         "relation": { "type": "string" }
       }
     },
     "listRelationEntry": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "path", "relation"],
+      "required": ["type", "path", "relation", "relationCondition", "conditionMatcher"],
       "properties": {
         "type": { "enum": ["LIST_RELATION_ENTRY"] },
         "path": { "type": "string" },
+        "relationCondition": { "enum": ["NON_ZERO_INT", "REGEXP", "NONE"] },
+        "conditionMatcher": { "type": "string" },
         "relation": { "type": "string" }
       }
     },
