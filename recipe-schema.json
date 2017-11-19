@@ -1,0 +1,252 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Snapper recipe schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["primary_key", "ingredients"],
+  "properties": {
+    "primary_key": { "oneOf": [{"type": "null"}, {"type": "string"}] },
+    "ingredients": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^.*$": { "$ref": "#/definitions/ingredient" }
+      }
+    }
+  },
+  "definitions": {
+    "ingredient": {
+      "anyOf": [
+        { "$ref": "#/definitions/valueIngredient" },
+        { "$ref": "#/definitions/refIngredient" },
+        { "$ref": "#/definitions/rawIngredient" },
+        { "$ref": "#/definitions/morphIngredient" },
+        { "$ref": "#/definitions/matchIngredient" },
+        { "$ref": "#/definitions/jsonIngredient" },
+        { "$ref": "#/definitions/circularIngredient" }
+      ]
+    },
+    "valueIngredient": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["VALUE"] },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {}
+        }
+      }
+    },
+    "refIngredient": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["REF"] },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": { "type": "string" },
+            "optional_values": { "type": "array", "items": {} }
+          }
+        }
+      }
+    },
+    "rawIngredient": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["RAW"] },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {}
+          }
+        }
+      }
+    },
+    "morphIngredient": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["MORPH"] },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "field": { "type": "string" },
+            "morph_mapper": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "morph_map": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "patternProperties": {
+                    "^.*$": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "matchIngredient": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["MATCH"] },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "field": { "type": "string" },
+            "matcher": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "field": { "type": "string" },
+                "on": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "patternProperties": {
+                    "^.*$": { "$ref": "#/definitions/ingredient" }
+                  }
+                },
+                "patterns": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "patternProperties": {
+                    "^.*$": { "$ref": "#/definitions/ingredient" }
+                  }
+                },
+                "default": {
+                  "anyOf": [
+                    { "type": "null" },
+                    { "$ref": "#/definitions/ingredient" }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "jsonIngredient": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["JSON"] },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "json_recipe": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "paths": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "patternProperties": {
+                    "^.*$": { "$ref": "#/definitions/matchedJson" }
+                  }
+                },
+                "patterns": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "patternProperties": {
+                    "^.*$": { "$ref": "#/definitions/matchedJson" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "matchedJson": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": { "enum": ["UNDEFINED_MODE"] },
+            "ref_type": { "type": "null" },
+            "optional_values": { "type": "array", "items": {} },
+            "pattern_handlers": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {}
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": { "enum": ["SINGLE_MODE"] },
+            "ref_type": { "type": "string" },
+            "optional_values": { "type": "array", "items": {} },
+            "pattern_handlers": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {}
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": { "enum": ["PATTERN_MODE"] },
+            "ref_type": { "type": "null" },
+            "optional_values": { "type": "array", "items": {} },
+            "pattern_handlers": {
+              "type": "object",
+              "additionalProperties": false,
+              "patternProperties": {
+                "^.*$": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "placeholder": { "type": "string" },
+                    "replacements": {
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "items": [
+                          { "type": "string" },
+                          { "type": "number" },
+                          { "type": "string" }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "circularIngredient": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["CIRCULAR"] },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "ingredient": { "$ref": "#/definitions/ingredient" },
+            "fallback": { "$ref": "#/definitions/ingredient" }
+          }
+        }
+      }
+    }
+  }
+}

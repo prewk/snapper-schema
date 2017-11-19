@@ -17,72 +17,32 @@ use stdClass;
 class SchemaProvider
 {
     /**
-     * Make a schema provider
-     * 
-     * @return SchemaProvider
-     */
-    public function make(): SchemaProvider
-    {
-        return new static;
-    }
-
-    /**
-     * Get master schema as a JSON decoded stdClass
+     * Get recipe schema as a JSON decoded stdClass
      *
      * @return stdClass
      */
-    public function getMasterJSON(): stdClass
+    public static function getRecipeJSON(): stdClass
     {
-        return json_decode($this->getMasterString());
+        return json_decode(self::getRecipeString());
     }
 
     /**
-     * Get snapshot schema as a JSON decoded stdClass
-     *
-     * @return stdClass
-     */
-    public function getSnapshotJSON(): stdClass
-    {
-        return json_decode($this->getSnapshotString());
-    }
-    
-    /**
-     * Get master schema as a JSON string
+     * Get recipe schema as a JSON string
      *
      * @return string
      */
-    public function getMasterString(): string
-    {
-        return file_get_contents(__DIR__ . "../../master-schema.json");
-    }
-    
-    /**
-     * Get snapshot schema as a JSON string
-     *
-     * @return string
-     */
-    public function getSnapshotString(): string
+    public static function getRecipeString(): string
     {
         return file_get_contents(__DIR__ . "../../snapshot-schema.json");
     }
 
     /**
-     * Get schema as a JSON Schema compatible ref object
+     * Get recipe schema as a JSON Schema compatible ref object
      *
      * @return stdClass
      */
-    public function getMasterAsRef(): stdClass
+    public static function getRecipeAsRef(): stdClass
     {
-        return (object)['$ref' => 'file://' . __DIR__ . "/../../master-schema.json"];
-    }
-    
-    /**
-     * Get snapshot schema as a JSON Schema compatible ref object
-     *
-     * @return stdClass
-     */
-    public function getSnapshotAsRef(): stdClass
-    {
-        return (object)['$ref' => 'file://' . __DIR__ . "/../../snapshot-schema.json"];
+        return (object)['$ref' => 'file://' . __DIR__ . "/../../recipe-schema.json"];
     }
 }

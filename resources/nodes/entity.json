@@ -1,7 +1,0 @@
-{
-    "type": "ENTITY",
-    "name": "foos",
-    "morphAs": "Foo",
-    "key": { "type": "PRIMARY_KEY", "name": "id" },
-    "fields": []
-}
