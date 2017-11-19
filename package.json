@@ -1,6 +1,6 @@
 {
   "name": "snapper-schema",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Snapper library's schemas",
   "main": "recipe-schema.json",
   "scripts": {},
