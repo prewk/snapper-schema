@@ -176,7 +176,7 @@
           "properties": {
             "mode": { "enum": ["UNDEFINED_MODE"] },
             "ref_type": { "type": "null" },
-            "optional_values": { "type": "array", "items": {} },
+            "optional_values": { "type": "array", "items": {} },
             "pattern_handlers": {
               "type": "object",
               "additionalProperties": false,
@@ -190,7 +190,7 @@
           "properties": {
             "mode": { "enum": ["SINGLE_MODE"] },
             "ref_type": { "type": "string" },
-            "optional_values": { "type": "array", "items": {} },
+            "optional_values": { "type": "array", "items": {} },
             "pattern_handlers": {
               "type": "object",
               "additionalProperties": false,
@@ -204,7 +204,7 @@
           "properties": {
             "mode": { "enum": ["PATTERN_MODE"] },
             "ref_type": { "type": "null" },
-            "optional_values": { "type": "array", "items": {} },
+            "optional_values": { "type": "array", "items": {} },
             "pattern_handlers": {
               "type": "object",
               "additionalProperties": false,
