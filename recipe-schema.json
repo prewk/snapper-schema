@@ -29,6 +29,7 @@
     "valueIngredient": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["type", "config"],
       "properties": {
         "type": { "enum": ["VALUE"] },
         "config": {
@@ -41,11 +42,13 @@
     "refIngredient": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["type", "config"],
       "properties": {
         "type": { "enum": ["REF"] },
         "config": {
           "type": "object",
           "additionalProperties": false,
+          "required": ["type", "optional_values"],
           "properties": {
             "type": { "type": "string" },
             "optional_values": { "type": "array", "items": {} }
@@ -56,6 +59,7 @@
     "rawIngredient": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["type", "config"],
       "properties": {
         "type": { "enum": ["RAW"] },
         "config": {
@@ -70,16 +74,19 @@
     "morphIngredient": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["type", "config"],
       "properties": {
         "type": { "enum": ["MORPH"] },
         "config": {
           "type": "object",
           "additionalProperties": false,
+          "required": ["field", "morph_mapper"],
           "properties": {
             "field": { "type": "string" },
             "morph_mapper": {
               "type": "object",
               "additionalProperties": false,
+              "required": ["morph_map"],
               "properties": {
                 "morph_map": {
                   "type": "object",
@@ -97,16 +104,19 @@
     "matchIngredient": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["type", "config"],
       "properties": {
         "type": { "enum": ["MATCH"] },
         "config": {
           "type": "object",
           "additionalProperties": false,
+          "required": ["field", "matcher"],
           "properties": {
             "field": { "type": "string" },
             "matcher": {
               "type": "object",
               "additionalProperties": false,
+              "required": ["field", "on", "patterns", "default"],
               "properties": {
                 "field": { "type": "string" },
                 "on": {
@@ -138,15 +148,18 @@
     "jsonIngredient": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["type", "config"],
       "properties": {
         "type": { "enum": ["JSON"] },
         "config": {
           "type": "object",
           "additionalProperties": false,
+          "required": ["json_recipe"],
           "properties": {
             "json_recipe": {
               "type": "object",
               "additionalProperties": false,
+              "required": ["paths", "patterns"],
               "properties": {
                 "paths": {
                   "type": "object",
@@ -173,6 +186,7 @@
         {
           "type": "object",
           "additionalProperties": false,
+          "required": ["mode", "ref_type", "optional_handlers", "pattern_handlers"],
           "properties": {
             "mode": { "enum": ["UNDEFINED_MODE"] },
             "ref_type": { "type": "null" },
@@ -187,6 +201,7 @@
         {
           "type": "object",
           "additionalProperties": false,
+          "required": ["mode", "ref_type", "optional_handlers", "pattern_handlers"],
           "properties": {
             "mode": { "enum": ["SINGLE_MODE"] },
             "ref_type": { "type": "string" },
@@ -201,6 +216,7 @@
         {
           "type": "object",
           "additionalProperties": false,
+          "required": ["mode", "ref_type", "optional_handlers", "pattern_handlers"],
           "properties": {
             "mode": { "enum": ["PATTERN_MODE"] },
             "ref_type": { "type": "null" },
@@ -212,6 +228,7 @@
                 "^.*$": {
                   "type": "object",
                   "additionalProperties": false,
+                  "required": ["placeholder", "replacements"],
                   "properties": {
                     "placeholder": { "type": "string" },
                     "replacements": {
@@ -236,11 +253,13 @@
     "circularIngredient": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["type", "config"],
       "properties": {
         "type": { "enum": ["CIRCULAR"] },
         "config": {
           "type": "object",
           "additionalProperties": false,
+          "required": ["ingredient", "fallback"],
           "properties": {
             "ingredient": { "$ref": "#/definitions/ingredient" },
             "fallback": { "$ref": "#/definitions/ingredient" }
