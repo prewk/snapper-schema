@@ -186,7 +186,7 @@
         {
           "type": "object",
           "additionalProperties": false,
-          "required": ["mode", "ref_type", "optional_handlers", "pattern_handlers"],
+          "required": ["mode", "ref_type", "optional_values", "pattern_handlers"],
           "properties": {
             "mode": { "enum": ["UNDEFINED_MODE"] },
             "ref_type": { "type": "null" },
@@ -201,7 +201,7 @@
         {
           "type": "object",
           "additionalProperties": false,
-          "required": ["mode", "ref_type", "optional_handlers", "pattern_handlers"],
+          "required": ["mode", "ref_type", "optional_values", "pattern_handlers"],
           "properties": {
             "mode": { "enum": ["SINGLE_MODE"] },
             "ref_type": { "type": "string" },
@@ -216,7 +216,7 @@
         {
           "type": "object",
           "additionalProperties": false,
-          "required": ["mode", "ref_type", "optional_handlers", "pattern_handlers"],
+          "required": ["mode", "ref_type", "optional_values", "pattern_handlers"],
           "properties": {
             "mode": { "enum": ["PATTERN_MODE"] },
             "ref_type": { "type": "null" },
