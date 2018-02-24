@@ -80,7 +80,7 @@
         "config": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["field", "morph_mapper"],
+          "required": ["field", "morph_mapper", "optional_values"],
           "properties": {
             "field": { "type": "string" },
             "morph_mapper": {
@@ -96,7 +96,8 @@
                   }
                 }
               }
-            }
+            },
+            "optional_values": { "type": "array", "items": {} }
           }
         }
       }
